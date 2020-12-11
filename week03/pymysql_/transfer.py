@@ -421,12 +421,14 @@ class Mysql(object):
             if self.affair:
                 a = 1 / 0
             self.connection.commit()
-            msg.status = Message.SUCCESS
         except Exception as e:
             # print("Failed to execute database. SQL：{}".format(sql))
             self.connection.rollback()
+            self.connection.commit()
             msg.status = Message.FAILED
             raise e
+        else:
+            msg.status = Message.SUCCESS
         finally:
             return msg
 
@@ -442,12 +444,13 @@ class Mysql(object):
                 cursor.execute(sql)
                 result = cursor.fetchone()
             self.connection.commit()
-            msg.status = Message.SUCCESS
             msg.result = result
         except Exception as e:
             print("Failed to execute database. SQL：{}".format(sql))
             msg.status = Message.FAILED
             raise e
+        else:
+            msg.status = Message.SUCCESS
         finally:
             return msg
 
