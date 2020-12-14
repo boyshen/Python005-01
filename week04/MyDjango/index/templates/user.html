@@ -1,0 +1,13 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>BooksList</title>
+</head>
+<body>
+
+{% for u in user %}
+    <div>name: {{ u.username }},
+        author: {{ u.author }}
+    </div>
+{% endfor %}
+</body>
