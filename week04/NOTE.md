@@ -1,5 +1,8 @@
-5. Django Web 开发入门
-5.1 开发环境配置
+Django Web 开发入门
+
+homework:   MyDjango/douban.  相关参考：MyDjango/README.md 
+
+开发环境配置
   ● 简介
       ○ Django 是一个开放源代码的 Web 应用框架。
       ○ Django 最初被设计用于具有快速开发需求的新闻类站点，目的是要实现简单快捷的网站开发
@@ -24,7 +27,7 @@
           ■ django.__version__
           
 
-5.2 创建项目和应用程序
+创建项目和应用程序
   ● 创建项目
       ○ django-admin startproject [MyDjango  Django 项目名称] 
       ○ 项目相关配置文件
@@ -44,7 +47,7 @@
       ○ python manage.py runserver
       ○ python manage.py runserver 0.0.0.0:8888
 
-5.3 settings.py  配置文件
+settings.py  配置文件
   ● 配置文件包括的内容
       ○ 项目路径
       ○ 密钥
@@ -57,7 +60,7 @@
       ○ 缓存
       ○ 中间件
 
-5.4 Django 如何处理请求
+Django 如何处理请求
   ● 当一个用户请求 Django 站点的一个页面
       ○ 1. 如果传入的 HttpRequest 对象拥有 urlconf 属性（通过中间件设置），它的值将被用来代替 ROOT_URLCONF 设置。
           ■ setting 配置文件中
@@ -69,7 +72,7 @@
 
 
       ○ 4. 如果没有 URL 被匹配，或者匹配过程中出现异常，Django 会调用一个适当的错误处理视图
-5.5 让 URL 支持变量
+让 URL 支持变量
   ●  让 URL 支持变量的三种方式：类型模式、正则表达式、自定义匹配规则
   ● 1. 类型模式支持：str、int、slug、uuid、path
       ○ 使用方法。在APP应用程序目录下的 url.py 文件中添加。例如：
@@ -86,7 +89,7 @@
           ■ 在应用程序的 url.py 配置文件中，导入 django 中的 reister_convert 模块，注册转换函数。
       ○ 3.3 配置path。其中 myint 为注册函数中替换 url 的名称。
 
-5.6 view 视图
+view 视图
   ● 快捷函数
       ○ render（绑定）
           ■ 将给定的模板与上下文字典组合在一起，并以渲染的文本返回一个 HttpResponse 对象
@@ -94,7 +97,7 @@
       ○ get_object_or_404
           ■ 在给定的模型管理器(model manager) 上调用 get(), 但它会引发 http404 而不是模型的 DoesNotExists 异常。
 
-5.7.1 创建模型
+创建模型
   ● 1. 安装 mysql-client
       ○ 1.1 参考：https://docs.djangoproject.com/zh-hans/3.0/ref/databases/#mysql-notes
       ○ 1.2 配置环境变量
@@ -119,7 +122,7 @@
       ○ sqlmigrate，显示用于迁移的SQL语句。
       ○ showmigrations，其中列出了项目的迁移及其状态。其中 [X] 表示已经迁移，[] 表示没有迁移。
 
-5.7.2 模型操作
+模型操作
   ● 使用 Diango 提供的 manage.py shell 进行测试模型。
       ○ python manage.py shell
   ● 增
@@ -158,20 +161,20 @@
           ■ Name.objects.values_list('name').count()
           ■ T1.objects.aggregate(Avg('n_star'))
 
-5.8 模板
+模板
   ● 模板变量 {{ variables }}
   ● 从 URL 获取模板变量 {% url 'urlyear' 2020 %}  其中 url 指定从 url中获取，‘urlyear’ 为url中的name。
   ● 读取静态资源内容 {% static "css/header.css" %}
   ● for 遍历标签 {% for type in type_list %} {% endfor %}
   ● if 判断标签 {% if name.type==type.type %}{% endif %}
 
-5.9 反向创建Models
+反向创建Models
   ● 反向创建 Models。即根据数据库中已有的表创建映射到 Models.py 文件中
   ● 1. 编辑 setting.py 文件。指定连接的数据库等相关信息。
   ● 2. 执行，输出可以映射 Model 程序，使用 > 将数据流输入到指定文件中。
       ○ python manage.py inspectdb 
       ○ 或：python manage.py inspectdb > models.py
 
-5.10 Bootstrap 框架了解 
+Bootstrap 框架了解 
   ● 获取 bootstrap 
   ● 通过文档了解 bootstrap 
