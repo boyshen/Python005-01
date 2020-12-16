@@ -222,7 +222,7 @@ class Mysql(object):
         except Exception as e:
             # print("Failed to execute database. SQL：{}".format(sql))
             self.connection.rollback()
-            self.connection.commit()
+            # self.connection.commit()
             raise e
         else:
             self.connection.commit()
