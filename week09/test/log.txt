@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/Users/shen/Desktop/me/python/python_advanced/homework/Python005-01/week08/test/test.py", line 23, in main
+    test1()
+  File "/Users/shen/Desktop/me/python/python_advanced/homework/Python005-01/week08/test/test.py", line 18, in test1
+    test()
+  File "/Users/shen/Desktop/me/python/python_advanced/homework/Python005-01/week08/test/test.py", line 14, in test
+    a = 1 / 0
+ZeroDivisionError: division by zero
+
+Traceback (most recent call last):
+  File "/Users/shen/Desktop/me/python/python_advanced/homework/Python005-01/week08/test/test.py", line 23, in main
+    test1()
+  File "/Users/shen/Desktop/me/python/python_advanced/homework/Python005-01/week08/test/test.py", line 18, in test1
+    test()
+  File "/Users/shen/Desktop/me/python/python_advanced/homework/Python005-01/week08/test/test.py", line 14, in test
+    a = 1 / 0
+ZeroDivisionError: division by zero
